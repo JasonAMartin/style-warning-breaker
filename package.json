@@ -1,0 +1,25 @@
+{
+  "name": "style-warning-breaker",
+  "version": "1.0.0",
+  "description": "Plugin for Webpack that breaks the build on style linting errors from PostCSS/Stylelint.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: what is testing?\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jasonamartin/style-warning-breaker.git"
+  },
+  "homepage": "https://github.com/jasonamartin/style-warning-breaker",
+  "keywords": [
+    "webpack",
+    "stylelint",
+    "postcss",
+    "plugin"
+  ],
+  "author": "Jason A. Martin @jasonamartin",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.1.2"
+  }
+}
