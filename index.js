@@ -12,7 +12,7 @@ const breakBuild = (buildHasErrors) => {
 };
 
 module.exports = function(content, sourceMap) {
-  let buildHasErrors = false;
+  var buildHasErrors = false;
   if (sourceMap.messages.length > 0) {
     console.log(`File: ${sourceMap.opts.from}`.yellow);
     for (msg in sourceMap.messages) {
