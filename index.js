@@ -1,8 +1,10 @@
 var colors = require('colors');
 
-const displayErrors = (error) => (
-  `ERROR: ${error}`
-);
+const displayErrors = (error) => {
+  const errorText = (error.text !== undefined) ? `${error.text}` : '';
+  const errorPlacement = (error.line !== undefined && error.column !==undefined) ? ` - ${error.line}:${error.column}\n` : '';
+  return `${errorText}${errorPlacement}`;
+};
 
 const breakBuild = (buildHasErrors) => {
   if (buildHasErrors) {
@@ -14,11 +16,11 @@ const breakBuild = (buildHasErrors) => {
 module.exports = function(content, sourceMap) {
   var buildHasErrors = false;
   if (sourceMap.messages.length > 0) {
-    console.log(`File: ${sourceMap.opts.from}`.yellow);
+    console.log(`ERROR IN: ${sourceMap.opts.from}`.yellow);
     for (msg in sourceMap.messages) {
       if (sourceMap.messages[msg].severity === 'error') {
         buildHasErrors = true;
-        console.log(displayErrors(sourceMap.messages[msg].text).yellow);
+        console.log(displayErrors(sourceMap.messages[msg]).yellow);
       }
     }
     breakBuild(buildHasErrors);

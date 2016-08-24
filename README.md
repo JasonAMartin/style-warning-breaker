@@ -26,9 +26,8 @@ postcss: function () {
 ## EXAMPLE OUTPUT
 
 ```
-File: /demoProject/main.css
-ERROR: Expected "margin" to come before "position" (declaration-block-properties-order)
-ERROR: Expected "color" to come before "font-size" (declaration-block-properties-order)
-ERROR: Expected "display" to come before "flex" (declaration-block-properties-order)
+ERROR IN: /yourProject/some.css
+Expected line length to be no more than 100 characters (max-line-length) - 202:90
+
 Breaking build due to CSS linting errors.
 ```
